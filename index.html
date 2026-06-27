@@ -5,13 +5,15 @@
     <meta name="google-site-verification" content="8dXpGngdpoDMKGNNMTGyK3mXviBJS9_7W26Ks10ycTI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Istiaque Ahmed Toyob - Portfolio</title>
-    <meta name="description" content="Portfolio of Istiaque Ahmed Toyob, Founder & CEO at Zoomerz.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
         #drawer { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
         #drawer.open { transform: translateX(0); }
+        .slide { display: none; }
+        .slide.active { display: block; animation: fadeEffect 1s; }
+        @keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen">
@@ -47,14 +49,15 @@
     </header>
 
     <main class="max-w-3xl mx-auto p-8 space-y-6">
-        <section class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 backdrop-blur-sm">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-red-500 mb-2">About Me</h2>
-            <p id="bioText" class="text-slate-300">I am a passionate student at Notre Dame College and the Founder & CEO of Zoomerz. I believe in innovation, leadership, and creating impactful solutions for the future.</p>
+        <section class="relative w-full h-64 overflow-hidden rounded-3xl bg-slate-800">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" class="slide active w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" class="slide w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" class="slide w-full h-full object-cover">
         </section>
 
         <section class="bg-blue-900/20 p-6 rounded-3xl border border-blue-900/50">
             <h2 class="text-sm font-bold uppercase tracking-widest text-blue-400 mb-2">Live Dashboard</h2>
-            <p id="dashboardMsg" class="text-slate-200 italic">"Welcome to my portfolio! Check back for latest updates."</p>
+            <p id="dashboardMsg" class="text-slate-200 italic">"Welcome to my portfolio! Check back for latest updates.You can join any of my projects and also can contribute.  So this can be unseen lucky chance for revolutionary future.Contact from the link above."</p>
         </section>
 
         <section class="bg-slate-900/30 p-6 rounded-3xl border border-red-900/50 shadow-[0_0_10px_rgba(220,38,38,0.1)]">
@@ -63,6 +66,12 @@
                 <button onclick="toggleDrawer()" class="text-slate-500 hover:text-red-500 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button>
             </div>
             <ul id="projectList" class="text-slate-300 space-y-2 list-disc list-inside marker:text-red-600"></ul>
+        </section>
+
+        <section class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 backdrop-blur-sm">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-red-500 mb-2">About Me</h2>
+            <p id="bioText" class="text-slate-300">Driven by a deep passion for open-source technology, cybersecurity, and next-generation AI, I am a tech innovator currently pursuing my studies at Notre Dame. As the CEO and Founder of Zo0m3rz, I lead the development of modern digital solutions and cross-platform applications, turning complex technical concepts into real-world tools.
+​My expertise spans advanced terminal environments, Linux/CLI optimization, and building secure, tracker-free infrastructures. From developing custom AI-integrated projects utilizing the Gemini API to configuring advanced cloud systems via GitHub, Cloudflare, and Google Cloud, I thrive on solving intricate software and hardware challenges. Whether I am analyzing system vulnerabilities, optimizing device performance, or architecting secure networks, I approach technology with an elite analytical mindset and an uncompromising commitment to digital efficiency and privacy.</p>
         </section>
     </main>
 
@@ -82,6 +91,16 @@
     </div>
 
     <script>
+        let slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 3000);
+        }
         window.onload = () => {
             if(localStorage.getItem('myProjects')) updateProjectList(localStorage.getItem('myProjects').split(','));
             if(localStorage.getItem('myMsg')) document.getElementById('dashboardMsg').innerText = localStorage.getItem('myMsg');
