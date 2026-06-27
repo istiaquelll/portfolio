@@ -2,42 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="8dXpGngdpoDMKGNNMTGyK3mXviBJS9_7W26Ks10ycTI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Istiaque Ahmed Toyob</title>
+    <title>Istiaque Ahmed Toyob - Portfolio</title>
+    <meta name="description" content="Portfolio of Istiaque Ahmed Toyob, Founder & CEO at Zoomerz.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
-        
-        #drawer {
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        #drawer.open {
-            transform: translateX(0);
-        }
+        #drawer { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+        #drawer.open { transform: translateX(0); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-red-600">
+<body class="bg-slate-950 text-slate-100 min-h-screen">
 
     <header class="pt-16 pb-8 px-8 border-b border-red-900/50 animate-fade-in">
         <div class="max-w-3xl mx-auto flex items-center gap-8">
             <div class="w-32 h-32 rounded-2xl border-2 border-red-600 overflow-hidden shadow-[0_0_15px_rgba(220,38,38,0.3)] flex-shrink-0">
                 <img src="image.jpg" alt="Istiaque Ahmed Toyob" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/1e293b/white?text=IA+Toyob'">
             </div>
-            
-            <div class="text-left">
+            <div>
                 <h1 class="text-4xl font-extrabold text-white">Istiaque Ahmed Toyob</h1>
-                <p class="text-lg mt-1 text-red-500 font-medium tracking-wide uppercase">Founder & CEO at Zoomerz</p>
-                <div class="mt-2 flex items-center text-slate-400 gap-1 text-sm">
-                    <span>Dhaka, Bangladesh</span>
-                </div>
+                <p class="text-red-500 font-medium uppercase">Founder & CEO at Zoomerz</p>
             </div>
         </div>
-
+        
         <div class="mt-8 flex justify-center gap-6 animate-fade-in">
             <a href="mailto:istiaque057@gmail.com" class="p-3 bg-slate-900 rounded-full border border-red-900 hover:bg-red-600 transition-all text-slate-400 hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -57,68 +46,64 @@
         </div>
     </header>
 
-    <main class="max-w-3xl mx-auto p-8">
-        <section class="bg-slate-900/30 p-6 rounded-3xl border border-red-900/50 mb-6 shadow-[0_0_10px_rgba(220,38,38,0.1)]">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-sm font-bold uppercase tracking-widest text-red-500">Upcoming Projects</h2>
-                <button onclick="toggleDrawer()" class="text-slate-500 hover:text-red-500 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
-                </button>
-            </div>
-            <ul id="projectList" class="text-slate-300 space-y-2 list-disc list-inside marker:text-red-600">
-                <li>Project Alpha - AI Native OS</li>
-                <li>Zoomerz Mobile App V2</li>
-                <li>Community Outreach Portal</li>
-            </ul>
+    <main class="max-w-3xl mx-auto p-8 space-y-6">
+        <section class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 backdrop-blur-sm">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-red-500 mb-2">About Me</h2>
+            <p id="bioText" class="text-slate-300">I am a passionate student at Notre Dame College and the Founder & CEO of Zoomerz. I believe in innovation, leadership, and creating impactful solutions for the future.</p>
         </section>
 
-        <section class="bg-slate-900/50 p-6 rounded-3xl border border-slate-800 backdrop-blur-sm">
-            <h2 class="text-sm font-bold uppercase tracking-widest text-red-500 mb-4">About Me</h2>
-            <p class="text-lg leading-relaxed text-slate-300">
-                I am a passionate student at Notre Dame College and the Founder & CEO of <strong>Zoomerz</strong>. 
-                I believe in innovation, leadership, and creating impactful solutions for the future. 
-                With a deep interest in software engineering and entrepreneurship, I strive to build products that solve real-world problems. 
-                My focus remains on leveraging technology to drive meaningful change and digital transformation.
-            </p>
+        <section class="bg-blue-900/20 p-6 rounded-3xl border border-blue-900/50">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-blue-400 mb-2">Live Dashboard</h2>
+            <p id="dashboardMsg" class="text-slate-200 italic">"Welcome to my portfolio! Check back for latest updates."</p>
+        </section>
+
+        <section class="bg-slate-900/30 p-6 rounded-3xl border border-red-900/50 shadow-[0_0_10px_rgba(220,38,38,0.1)]">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-red-500">Upcoming Projects</h2>
+                <button onclick="toggleDrawer()" class="text-slate-500 hover:text-red-500 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button>
+            </div>
+            <ul id="projectList" class="text-slate-300 space-y-2 list-disc list-inside marker:text-red-600"></ul>
         </section>
     </main>
 
-    <footer class="text-center pb-8 text-slate-600 text-sm">
+    <footer class="text-center py-8 text-slate-600 text-sm border-t border-slate-900">
         <p>&copy; 2026 Istiaque Ahmed Toyob. All rights reserved.</p>
         <p class="mt-1">Developed by Istiaque Ahmed Toyob</p>
     </footer>
 
-    <div id="drawer" class="fixed top-0 right-0 h-full w-80 bg-slate-900 border-l border-red-900 shadow-2xl z-50 p-6">
-        <h3 class="text-xl font-bold mb-6 text-red-500">Edit Projects</h3>
-        <input type="password" id="passInput" placeholder="Enter Password" class="w-full p-3 bg-slate-800 rounded-lg mb-4 border border-slate-700 outline-none focus:border-red-500">
-        <textarea id="projectInput" placeholder="Projects (comma separated)" class="w-full h-40 p-3 bg-slate-800 rounded-lg mb-4 border border-slate-700 outline-none focus:border-red-500"></textarea>
-        <button onclick="saveProjects()" class="w-full py-3 bg-red-600 rounded-lg font-bold hover:bg-red-700 transition-colors">Save Changes</button>
+    <div id="drawer" class="fixed top-0 right-0 h-full w-80 bg-slate-900 border-l border-red-900 z-50 p-6 overflow-y-auto shadow-2xl">
+        <h3 class="text-xl font-bold mb-6 text-red-500">Edit Dashboard</h3>
+        <input type="password" id="passInput" placeholder="Password" class="w-full p-3 bg-slate-800 rounded-lg mb-4 border border-slate-700 outline-none focus:border-red-500">
+        <textarea id="bioInput" placeholder="Update Bio" class="w-full h-20 p-3 bg-slate-800 rounded-lg mb-4 outline-none focus:border-red-500"></textarea>
+        <textarea id="msgInput" placeholder="New Dashboard Message" class="w-full h-20 p-3 bg-slate-800 rounded-lg mb-4 outline-none focus:border-red-500"></textarea>
+        <textarea id="projectInput" placeholder="Projects (comma separated)" class="w-full h-40 p-3 bg-slate-800 rounded-lg mb-4 outline-none focus:border-red-500"></textarea>
+        <button onclick="saveData()" class="w-full py-3 bg-red-600 rounded-lg font-bold hover:bg-red-700 transition-colors">Save Changes</button>
         <button onclick="toggleDrawer()" class="w-full py-3 mt-2 text-slate-400 hover:text-white transition-colors">Cancel</button>
     </div>
 
     <script>
-        function toggleDrawer() {
-            document.getElementById('drawer').classList.toggle('open');
+        window.onload = () => {
+            if(localStorage.getItem('myProjects')) updateProjectList(localStorage.getItem('myProjects').split(','));
+            if(localStorage.getItem('myMsg')) document.getElementById('dashboardMsg').innerText = localStorage.getItem('myMsg');
+            if(localStorage.getItem('myBio')) document.getElementById('bioText').innerText = localStorage.getItem('myBio');
+        };
+        function toggleDrawer() { document.getElementById('drawer').classList.toggle('open'); }
+        function updateProjectList(projects) {
+            const list = document.getElementById('projectList');
+            list.innerHTML = '';
+            projects.forEach(p => { if(p.trim()) list.innerHTML += `<li>${p.trim()}</li>`; });
         }
-
-        function saveProjects() {
-            const pass = document.getElementById('passInput').value;
-            const text = document.getElementById('projectInput').value;
-            if (pass === "180012345") {
-                const list = document.getElementById('projectList');
-                list.innerHTML = '';
-                const projects = text.split(',');
-                projects.forEach(p => {
-                    if(p.trim()) {
-                        const li = document.createElement('li');
-                        li.textContent = p.trim();
-                        list.appendChild(li);
-                    }
-                });
+        function saveData() {
+            if (document.getElementById('passInput').value === "180012345") {
+                const bio = document.getElementById('bioInput').value;
+                const msg = document.getElementById('msgInput').value;
+                const proj = document.getElementById('projectInput').value;
+                if(bio) { localStorage.setItem('myBio', bio); document.getElementById('bioText').innerText = bio; }
+                if(msg) { localStorage.setItem('myMsg', msg); document.getElementById('dashboardMsg').innerText = msg; }
+                if(proj) { localStorage.setItem('myProjects', proj); updateProjectList(proj.split(',')); }
                 toggleDrawer();
-            } else {
-                alert("Incorrect password!");
-            }
+                document.getElementById('passInput').value = '';
+            } else { alert("Incorrect password!"); }
         }
     </script>
 </body>
