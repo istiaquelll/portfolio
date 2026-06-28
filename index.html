@@ -114,6 +114,39 @@
             grid-template-columns: auto 1fr;
             gap: 48px;
             align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-cover-wrap {
+            position: relative;
+            border: 1px solid rgba(232,32,42,0.18);
+            border-radius: 28px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(232,32,42,0.18), rgba(17,17,17,0.95));
+            box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+        }
+
+        .cover-photo {
+            position: relative;
+            min-height: 220px;
+            background: linear-gradient(135deg, rgba(232,32,42,0.25), rgba(17,17,17,0.82));
+        }
+
+        .cover-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .cover-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(13,13,13,0.88), rgba(13,13,13,0.25));
+            pointer-events: none;
         }
 
         .avatar-frame {
@@ -762,21 +795,25 @@
 
     <!-- HERO -->
     <header>
-        <div class="hero-grid">
-            <div class="avatar-frame">
-                <div class="avatar-ring"></div>
-                <div class="avatar-hex">
-                    <img src="Image.jpg" alt="Istiaque Ahmed Toyob" onerror="this.src='https://placehold.co/400x400/1a1a1a/E8202A?text=IAT'">
-                </div>
+        <div class="hero-cover-wrap">
+            <div class="cover-photo">
+                <img src="image2.jpg" alt="Cover photo" onerror="this.style.display='none'">
             </div>
-            <div>
-                <div class="hero-tag">Founder &amp; CEO · Zoomerz</div>
-                <h1 class="hero-name">
-                    <span class="glitch" data-text="ISTIAQUE">ISTIAQUE</span><br>
-                    <span style="color: var(--muted); font-weight: 400;">AHMED TOYOB</span>
-                </h1>
-                <div class="hero-role">Web Engineer · AI Systems · Cybersecurity</div>
-                <div class="hero-socials">
+            <div class="hero-grid" style="padding: 32px 32px 36px; margin-top: -100px;">
+                <div class="avatar-frame">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-hex">
+                        <img src="Image.jpg" alt="Istiaque Ahmed Toyob" onerror="this.src='https://placehold.co/400x400/1a1a1a/E8202A?text=IAT'">
+                    </div>
+                </div>
+                <div>
+                    <div class="hero-tag">Founder &amp; CEO · Zoomerz</div>
+                    <h1 class="hero-name">
+                        <span class="glitch" data-text="ISTIAQUE">ISTIAQUE</span><br>
+                        <span style="color: var(--muted); font-weight: 400;">AHMED TOYOB</span>
+                    </h1>
+                    <div class="hero-role">Web Engineer · AI Systems · Cybersecurity</div>
+                    <div class="hero-socials">
                     <a href="mailto:istiaque057@gmail.com" class="social-btn" title="Email">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </a>
@@ -792,6 +829,7 @@
                     <a href="https://www.facebook.com/istiaque.at" target="_blank" class="social-btn" title="Facebook">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                     </a>
+                    </div>
                 </div>
             </div>
         </div>

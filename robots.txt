@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://istiaquelll.github.io/portfolio/sitemap.xml
